@@ -1,0 +1,8 @@
+.Navbar-container{
+    width: 100%;
+    border: 2px solid brown;
+    height: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
