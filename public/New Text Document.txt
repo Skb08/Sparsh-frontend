@@ -1,0 +1,43 @@
+const [userName, setUsername] = useState("");
+  const [passWord, setPassword] = useState("");
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const data = { userName, passWord};
+    const options = {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(data),
+    };
+    try {
+      await fetch("http://localhost:8000/", options);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  return (
+    <>
+      <h1>hello world</h1>
+      <form onSubmit={handleSubmit} method="POST">
+        <div>
+          <label htmlFor="username">Username:</label>
+          <input
+            type="text"
+            id="userName"
+            value={userName}
+            onChange={(e) => setUsername(e.target.value)} 
+          />
+        </div>
+        <div>
+          <label htmlFor="password">Password:</label>
+          <input
+            type="password"
+            id="passWord"
+            value={passWord}
+            onChange={(e) => setPassword(e.target.value)}
+          />
+        </div>
+        <button type="submit">click Me</button>
+      </form>
+    </>
+  );
