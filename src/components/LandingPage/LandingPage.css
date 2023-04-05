@@ -3,7 +3,7 @@
     padding: 0;
     
 }
-.Landing-container{
+/* .Landing-container{
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -11,11 +11,52 @@
     background-color: rgb(48, 210, 221);
     height: 100vh;
     width: 100%;
-    
-}
+    background-color: antiquewhite;
+    background-image: url('/src/images/Landing-img.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+} */
 
 .NavLink{
     text-decoration: none;
     margin-top: 1rem;
     margin-bottom: 1rem;
+}
+.LandingImg{
+    height: 100vh;
+    width: 100%;
+}
+.Landing-content{
+    margin-top: -20rem;
+    border: 2px solid rgb(231, 23, 23);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 50%;
+    margin-left: 45%;
+    /* margin-top: -30%; */
+}
+.Landing-content>h1{
+    color: rgb(26, 26, 177);
+}
+.Landing-content>h5{
+    color: rgb(159, 54, 239);
+}
+.Landing-Navbar>ul{
+    display: flex;
+    flex-direction: row;
+    width: 40%;
+    height: 10%;
+    position: absolute;
+    margin-top: -8.5rem;
+    justify-content: space-between;
+    text-decoration: none;
+    margin-left: 45%;
+    list-style-type: none;
+    
+}
+.Landing-Nav{
+    text-decoration: none;
+    color: rgb(106, 43, 161);
 }
