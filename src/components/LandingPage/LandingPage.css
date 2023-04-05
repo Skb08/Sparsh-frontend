@@ -60,3 +60,11 @@
     text-decoration: none;
     color: rgb(106, 43, 161);
 }
+@media only screen  and (min-width: 1250px)  {
+    .Landing-Navbar>ul{
+        margin-top: -16rem !important;
+    }
+    .Landing-content{
+        margin-top: -24rem !important;
+    }
+}
