@@ -26,7 +26,7 @@ export default function SignIn() {
             <label htmlFor='email'>Email</label>
             <span>
               <EmailIcon/>
-              <input type='text' name='email' id='email' autoComplete='off'
+              <input type='text' name='email' id='email' autoComplete='off' placeholder='Email'
                 value={email} onChange={(e) => setEmail(e.target.value)} />
             </span>
           </div>
@@ -34,7 +34,7 @@ export default function SignIn() {
             <label htmlFor='password'>Password</label>
             <span >
               <LockIcon/>
-              <input type='password' name='password' id='password' autoComplete='off'
+              <input type='password' name='password' id='password' autoComplete='off' placeholder='*****'
                 value={password} onChange={(e) => setPassword(e.target.value)} />
             </span>
           </div>
