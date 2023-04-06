@@ -3,6 +3,7 @@ import { NavLink } from 'react-router-dom'
 import { Button } from '@mui/material';
 import '../LandingPage/LandingPage.css'
 import LandingImg from '../../images/Landing-img.jpg';
+import Helper from './Helper';
 
 export default function LandingPage() {
   return (
@@ -20,6 +21,7 @@ export default function LandingPage() {
               </ul>
             </div>
             <div className='Landing-content'>
+              <Helper/>
               <h1>Sparsh</h1>
               <br />
               <h5>"Your health is our top priority - "</h5>
