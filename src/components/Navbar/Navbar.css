@@ -1,8 +1,36 @@
 .Navbar-container{
     width: 100%;
-    border: 2px solid brown;
     height: 4.5rem;
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: rgb(173 178 222 / 64%);
+}
+.Navbar-img{
+    height: 4.5rem;
+    width: 30%;
+    /* border: 2px solid brown; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.Navbar-content{
+    height: 4.5rem;
+    width: 70%;
+    /* border: 2px solid brown; */
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    
+}
+.Navbar-Nav{
+    margin-left: 2rem;
+    font-size: 1.4rem;
+    text-decoration: none;
+    font-weight: bold ;
+}
+
+@media only screen  and (min-width: 1024px)  {
+    
 }

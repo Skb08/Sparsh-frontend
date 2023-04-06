@@ -8,8 +8,8 @@ import EmailIcon from '@mui/icons-material/Email';
 import LockIcon from '@mui/icons-material/Lock';
 
 export default function SignUp() {
-  const [email, setEmail] = useState("");
   const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [allEntry, setAllEntry] = useState([]);
   const submitForm = (e) => {
