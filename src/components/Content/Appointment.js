@@ -10,12 +10,19 @@ export default function Appointment() {
   const [date, setDate] = useState("");
   const [textarea, setTextarea] = useState("");
   const [timming, setTimming] = useState("");
-  const [allEntry, setAllEntry] = useState([]);
   const submitForm = (e) => {
     e.preventDefault();
     const newEntry = { name:name, email: email, phone: phone, date: date, timming: timming, textarea: textarea };
-    setAllEntry([...allEntry, newEntry]);
-    console.log(allEntry);
+    fetch('http://localhost:8000/appointment', {
+    headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+    },
+    method: 'POST',
+    body: JSON.stringify(newEntry)
+})
+.then(res => res.json())
+.then(data => console.log(data));
   }
   return (
     <>
