@@ -19,6 +19,7 @@ export default function SignIn() {
   }
   return (
     <div className='SignIn-container'>
+      <div className='SignIn-container2'><NavLink className='SignIn-NavLink2' to="/"><Button variant="contained">Home</Button></NavLink></div>
      <div className='form'>
         <form action='' className='form2' onSubmit={submitForm}>
           <h1>Sign In</h1>

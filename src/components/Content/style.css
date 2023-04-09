@@ -174,3 +174,11 @@
 #BMI-submit{
     margin-top: 2rem;
 }
+
+
+/***********************Media quary*********************/
+@media screen and (max-width:430px) {
+    .Appointment-container{
+        transform: scale(0.6) !important;
+    }
+}

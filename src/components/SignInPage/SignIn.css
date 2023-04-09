@@ -19,6 +19,15 @@
     margin-bottom: 3rem;
     font-weight: bold;
 }
+.SignIn-container2{
+    margin-top: -4rem;
+    margin-bottom: 4rem;
+}
+.SignIn-NavLink2 {
+    text-decoration: none;
+    margin-left: 77rem;
+    
+}
 
 .form {
     background-color: white;

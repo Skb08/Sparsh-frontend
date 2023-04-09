@@ -18,6 +18,15 @@
     margin-bottom: 3rem;
     font-weight: bold;
 }
+.SignUp-container2{
+    margin-top: -4rem;
+    margin-bottom: 4rem;
+}
+.SignUp-NavLink2 {
+    text-decoration: none;
+    margin-left: 77rem;
+    
+}
 
 .signUp-img {
     width: 20rem;

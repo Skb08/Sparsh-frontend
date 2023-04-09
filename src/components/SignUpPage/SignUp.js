@@ -20,6 +20,7 @@ export default function SignUp() {
   }
   return (
     <div className='SignUp-container'>
+      <div className='SignUp-container2'><NavLink className='SignUp-NavLink2' to="/"><Button variant="contained">Home</Button></NavLink></div>
       <div className='form'>
         <div className='form3'>
           <img className='signUp-img' src={signUpimg} alt="suraj"></img>
