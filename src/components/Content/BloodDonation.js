@@ -8,17 +8,27 @@ import BloodImg from '../../images/blood-img.png'
 export default function BloodDonation() {
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
-  const [bloodgroup, setBloodgroup] = useState("");
-  const [BMI, setBMI] = useState("");
-  const [pin, setPin] = useState("");
+  const [blood, setBloodgroup] = useState("");
+  const [bmi, setBMI] = useState("");
+  const [pin, setPin] = useState(""); 
   const [address, setAddress] = useState("");
-  const [allEntry, setAllEntry] = useState([]);
+
   const submitForm = (e) => {
     e.preventDefault();
-    const newEntry = { name: name, phone: phone, bloodgroup: bloodgroup, pin: pin, address: address };
-    setAllEntry([...allEntry, newEntry]);
-    console.log(allEntry);
+    const newEntry = { name:name,phone: phone,blood : blood, bmi : bmi, pin: pin };
+    console.log(newEntry);
+    fetch('http://localhost:8000/donation', {
+    headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+    },
+    method: 'POST',
+    body: JSON.stringify(newEntry)
+  })
+    .then(res => res.json()) 
+    .then(data => console.log(data));
   }
+  
   return (
     <>
       <Navbar />
@@ -37,7 +47,7 @@ export default function BloodDonation() {
                 value={name} onChange={(e) => setName(e.target.value)} />
               <input type="text" placeholder="Phone" name="phone" required autoComplete='off'
                 value={phone} onChange={(e) => setPhone(e.target.value)} />
-              <select name="bloodgroup" id="udit" value={bloodgroup} onChange={(e) => setBloodgroup(e.target.value)}>
+              <select name="bloodgroup" id="udit" value={blood} onChange={(e) => setBloodgroup(e.target.value)}>
                 <option className="appoinment" value="" disabled selected>Select Your Blood Group</option>
                 <option value="A+">A+</option>
                 <option value="A-">A-</option>
@@ -49,7 +59,7 @@ export default function BloodDonation() {
                 <option value="O-">O-</option>
               </select>
               <input type="number" placeholder="BMI" name="BMI" required autoComplete='off'
-                value={BMI} onChange={(e) => setBMI(e.target.value)} />
+                value={bmi} onChange={(e) => setBMI(e.target.value)} />
               <input type="number" placeholder="Pin" id="appintment-date" name="pin" required autoComplete='off'
                 value={pin} onChange={(e) => setPin(e.target.value)} />
               <input type="text" placeholder="Address" id="appintment-date" name="address" required autoComplete='off'
