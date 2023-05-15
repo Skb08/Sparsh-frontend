@@ -18,10 +18,17 @@
     margin-bottom: 3rem;
     font-weight: bold;
 }
-.SignUp-container2{
+.SignUp-NavLink-div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* margin-bottom: -1rem; */
+    /* gap: 1rem; */
+}
+/* .SignUp-container2{
     margin-top: -4rem;
     margin-bottom: 4rem;
-}
+} */
 .SignUp-NavLink2 {
     text-decoration: none;
     margin-left: 77rem;
@@ -108,4 +115,60 @@
 .btn {
     margin-top: 3rem !important;
 
+}
+
+
+/***********************Media quary*********************/
+
+/* media query for small laptop */
+@media only screen  and (max-width: 1200px) and (min-width: 770px){
+    /* .SignIn-container{
+        
+    } */
+}
+@media only screen  and (max-width: 770px) and (min-width: 430px){
+    .SignUp-container{
+        height: fit-content;
+    }
+    .form{
+        transform: scale(0.82) ;
+        flex-direction: column !important;
+        height: 60rem !important;
+        width: 36rem !important;
+        
+    }
+}
+
+@media only screen  and (max-width: 430px) and (min-width: 376px)  {
+    .SignUp-container{
+        height: fit-content;
+    }
+    .form{
+        transform: scale(0.78) ;
+        flex-direction: column !important;
+        height: 56rem !important;
+        width: 28rem !important;
+        
+    }
+    .form-signUp{
+        height: 60rem !important;
+    }
+}
+
+@media only screen  and (max-width: 376px){
+    .SignUp-container{
+        height: fit-content;
+        width: fit-content;
+        /* margin-left: -1rem; */
+    }
+    .form{
+        transform: scale(0.74) ;
+        flex-direction: column !important;
+        height: 55rem !important;
+        width: 24rem !important;
+        
+    }
+    .form-signUp{
+        height: 60rem !important;
+    }
 }

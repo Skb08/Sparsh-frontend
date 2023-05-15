@@ -3,6 +3,7 @@ import Navbar from '../Navbar/Navbar'
 import { Button } from '@mui/material'
 import '../Content/style.css'
 
+
 export default function Appointment() {
   const [email, setEmail] = useState("");
   const [name, setName] = useState("");
@@ -19,12 +20,12 @@ export default function Appointment() {
   }
   return (
     <>
-      {/* <Navbar /> */}
+      <Navbar />
       <div className='Appointment-container'>
         <div className="Appointment-container1">
-          <h1 className="heading"> <span>Make an</span> Appointment </h1>
           
             <form className="Appointment-form-2" action="/Appointment" method="POST" onSubmit={submitForm}>
+              <h1 className="heading"> <span>Make an</span> Appointment </h1>
               <div className="inputBox">
                 <input type="text" placeholder="full name" name="name" required autoComplete='off' 
                   value={name} onChange={(e) => setName(e.target.value)}/>
