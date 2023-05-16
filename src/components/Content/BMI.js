@@ -10,8 +10,11 @@ export default function BMI() {
   const [bmi, setBMI] = useState("");
 
   function calculateBMI(e) {
+
+    e.preventDefault(); 
     const h = height / 100;
     const bmi = weight / (h * h);
+    console.log(h);
 
     if (bmi < 16) {
       setMessage("Severe Thinness. ");
