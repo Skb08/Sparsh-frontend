@@ -20,10 +20,13 @@ export default function SignUp() {
   }
   return (
     <div className='SignUp-container'>
-      <div className='form'>
+      <div className='form form-signUp'>
         <div className='form3'>
           <img className='signUp-img' src={signUpimg} alt="suraj"></img>
-          <NavLink className='SignUp-NavLink' to="/SignIn">Already have an account</NavLink>
+          <div className='SignUp-NavLink-div'>
+            <NavLink className='SignUp-NavLink' to="/SignIn">Already have an account</NavLink>
+            <NavLink className='SignUp-NavLink' to="/"><Button variant="contained">Home</Button></NavLink>
+          </div> 
         </div>
         <form action='' className='form2' onSubmit={submitForm}>
           <h1>Sign Up</h1>
@@ -50,8 +53,8 @@ export default function SignUp() {
               <input type='password' name='password' id='password' autoComplete='off' placeholder='*****'
                 value={password} onChange={(e) => setPassword(e.target.value)} />
             </span>
-          </div>
-          <Button type='submit' className='btn'  variant="contained">Sign Up</Button>
+          </div>          
+            <Button type='submit' className='btn'  variant="contained">Sign Up</Button>
       </form>
      </div>
     </div>

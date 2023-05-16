@@ -3,6 +3,7 @@ import Navbar from '../Navbar/Navbar'
 import { Button } from '@mui/material'
 import '../Content/style.css'
 
+
 export default function Appointment() {
   const [email, setEmail] = useState("");
   const [name, setName] = useState("");
@@ -30,9 +31,9 @@ export default function Appointment() {
       <Navbar />
       <div className='Appointment-container'>
         <div className="Appointment-container1">
-          <h1 className="heading"> <span>Make an</span> Appointment </h1>
           
             <form className="Appointment-form-2" action="/Appointment" method="POST" onSubmit={submitForm}>
+              <h1 className="heading"> <span>Make an</span> Appointment </h1>
               <div className="inputBox">
                 <input type="text" placeholder="full name" name="name" required autoComplete='off' 
                   value={name} onChange={(e) => setName(e.target.value)}/>
@@ -43,7 +44,7 @@ export default function Appointment() {
                 <input type="date" id="appintment-date" name="date" required autoComplete='off' 
                   value={date} onChange={(e) => setDate(e.target.value)}/>
                 <select name="timing" id="udit" value={timming} onChange={(e) => setTimming(e.target.value)}>
-                  <option className="appoinment" value="" disabled selected>make an appointment</option>
+                  <option className="appoinment"  disabled value = "" required >make an appointment</option>
                   <option value="09 AM - 11 AM">09 AM - 11 AM</option>
                   <option value="11 AM - 01 PM">11 AM - 01 PM</option>
                   <option value="03 PM - 05 PM">03 PM - 05 PM</option>

@@ -25,6 +25,7 @@
 .LandingImg{
     height: 100vh;
     width: 100%;
+    
 }
 .Landing-content{
     margin-top: -20rem;
@@ -60,11 +61,31 @@
     text-decoration: none;
     color: rgb(106, 43, 161);
 }
+
 @media only screen  and (min-width: 1250px)  {
     .Landing-Navbar>ul{
-        margin-top: -16rem !important;
+        margin-top: -12rem !important;
     }
     .Landing-content{
-        margin-top: -24rem !important;
+        margin-top: -27rem !important;
+    }
+    .Landing-content>h5{
+        font-size: 1.5rem;
+    }
+}
+
+@media only screen  and (max-width: 1250px) and (min-width: 770px) {
+   /* .LandingImg{
+        transform: scale(0.8);
+        
+   } */
+}
+
+@media only screen  and (max-width: 770px) and (min-width: 430px) {
+    .Landing-Navbar{
+        transform: scale(0.9);
+    }
+    .Landing-content{
+        transform: scale(0.8);
     }
 }

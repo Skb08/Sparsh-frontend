@@ -19,6 +19,7 @@ export default function SignIn() {
   }
   return (
     <div className='SignIn-container'>
+     {/* <div className='SignIn-container2'></div> */}
      <div className='form'>
         <form action='' className='form2' onSubmit={submitForm}>
           <h1>Sign In</h1>
@@ -42,7 +43,10 @@ export default function SignIn() {
       </form>
       <div className='form3'>
         <img className='signIn-img' src={signInimg} alt="suraj"></img>
-        <NavLink className='SignIn-NavLink' to="/SignUp">Create an account</NavLink>
+        <div className='SignIn-NavLink-div'>
+          <NavLink className='SignIn-NavLink' to="/SignUp">Create an account</NavLink>
+          <NavLink className='SignIn-NavLink' to="/"><Button variant="contained">Home</Button></NavLink>
+        </div>
       </div>
      </div>
     </div>
