@@ -10,8 +10,8 @@ export default function BMI() {
   const [bmi, setBMI] = useState("");
 
   function calculateBMI(e) {
-    e.preventDefault(); 
 
+    e.preventDefault(); 
     const h = height / 100;
     const bmi = weight / (h * h);
     console.log(h);

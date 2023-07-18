@@ -12,11 +12,7 @@ export default function Navbar() {
       </button>
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div className='navbar-nav'>
-          <NavLink className='Navbar-Nav nav-item nav-link' to='/'>Home </NavLink>
           <NavLink className='Navbar-Nav nav-item nav-link' to='/Home'>About </NavLink>
-          <NavLink className='Navbar-Nav nav-item nav-link' to='/Appointment'>Appointment</NavLink>
-          <NavLink className='Navbar-Nav nav-item nav-link' to='/BMI'>BMI</NavLink>
-          <NavLink className='Navbar-Nav nav-item nav-link' to='/BloodDonation'>Blood-Donation</NavLink>
           <NavLink className='Navbar-Nav nav-item nav-link' to='/ContactUs'>Contact-Us</NavLink>
         </div>
       </div>

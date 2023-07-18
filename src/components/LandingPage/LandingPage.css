@@ -1,70 +1,91 @@
-*{
-    margin: 0;
-    padding: 0;
+#hero {
+    width: 100%;
+    height: 95vh;
+    background: rgb(134 115 115 / 49%);
     
 }
-/* .Landing-container{
+section {
+    padding: 60px 0;
+    overflow: hidden;
+}
+#hero .container {
+    padding-top: 72px;
+}
+.row {
+    --bs-gutter-x: 1.5rem;
+    --bs-gutter-y: 0;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-color: rgb(48, 210, 221);
-    height: 100vh;
-    width: 100%;
-    background-color: antiquewhite;
-    background-image: url('/src/images/Landing-img.jpg');
-    background-repeat: no-repeat;
-    background-size: cover;
-} */
+    flex-wrap: wrap;
+    margin-top: calc(-1 * var(--bs-gutter-y));
+    margin-right: calc(-.5 * var(--bs-gutter-x));
+    margin-left: calc(-.5 * var(--bs-gutter-x));
+}
+#hero .animated {
+    animation: up-down 2s ease-in-out infinite alternate-reverse both;
+}
+.img-fluid {
+    max-width: 100%;
+    height: auto;
+}
+img, svg {
+    vertical-align: middle;
+}
+#hero h1 {
+    margin: 0 0 10px 0;
+    font-size: 38px;
+    font-weight: 700;
+    line-height: 60px;
+    color: #4e6eeb;
+}
+#hero h2 {
+    color: rgba(22, 122, 223, 0.6);
+    margin-bottom: 50px;
+    font-size: 24px;
+}
+#hero .btn-get-started {
+    font-family: "Jost", sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    letter-spacing: 1px;
+    display: inline-block;
+    padding: 10px 28px 11px 28px;
+    border-radius: 50px;
+    transition: 0.5s;
+    margin: 10px 0 0 2rem;
+    color: #fff;
+    background: #47b2e4;
+}
 
-.NavLink{
-    text-decoration: none;
-    margin-top: 1rem;
-    margin-bottom: 1rem;
+
+img.vert-move {
+    -webkit-animation: mover 1s infinite  alternate;
+    animation: mover 1s infinite  alternate;
 }
-.LandingImg{
-    height: 100vh;
-    width: 100%;
+img.vert-move {
+    -webkit-animation: mover 1s infinite  alternate;
+    animation: mover 1.5s infinite  alternate;
 }
-.Landing-content{
-    margin-top: -20rem;
-    border: 2px solid rgb(231, 23, 23);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    width: 50%;
-    margin-left: 45%;
-    /* margin-top: -30%; */
+@-webkit-keyframes mover {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-20px); }
 }
-.Landing-content>h1{
-    color: rgb(26, 26, 177);
+@keyframes mover {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-20px); }
 }
-.Landing-content>h5{
-    color: rgb(159, 54, 239);
-}
-.Landing-Navbar>ul{
-    display: flex;
-    flex-direction: row;
-    width: 40%;
-    height: 10%;
-    position: absolute;
-    margin-top: -8.5rem;
-    justify-content: space-between;
-    text-decoration: none;
-    margin-left: 45%;
-    list-style-type: none;
-    
-}
-.Landing-Nav{
-    text-decoration: none;
-    color: rgb(106, 43, 161);
-}
-@media only screen  and (min-width: 1250px)  {
-    .Landing-Navbar>ul{
-        margin-top: -16rem !important;
+
+@media only screen  and (max-width: 770px) and (min-width: 430px){
+    #hero{
+        height: fit-content;
     }
-    .Landing-content{
-        margin-top: -24rem !important;
+}
+@media only screen  and (max-width: 430px) and (min-width: 376px){
+    #hero{
+        height: fit-content;
+    }
+}
+@media only screen  and (max-width: 376px){
+    #hero{
+        height: fit-content;
     }
 }
