@@ -14,9 +14,6 @@ export default function LandingPage() {
             <div className='Landing-Navbar'>
               <ul>
                 <NavLink className='Landing-Nav' to='/Home'>About</NavLink>
-                <NavLink className='Landing-Nav' to='/Appointment'>Appointment</NavLink>
-                <NavLink className='Landing-Nav' to='/BMI'>BMI</NavLink>
-                <NavLink className='Landing-Nav' to='/BloodDonation'>Blood-Donation</NavLink>
                 <NavLink className='Landing-Nav' to='/ContactUs'>Contact-Us</NavLink>
               </ul>
             </div>

@@ -11,12 +11,10 @@ export default function SignUp() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [allEntry, setAllEntry] = useState([]);
   const submitForm = (e) => {
     e.preventDefault();
-    const newEntry = { name:name, email: email, password: password };
-    setAllEntry([...allEntry, newEntry]);
-    console.log(allEntry);
+    const newEntry = { name, email, password };
+    console.log(newEntry);
   }
   return (
     <div className='SignUp-container'>
