@@ -71,11 +71,11 @@
     display: flex;
     flex-direction: row;
     list-style-type: none;
-    padding: 15px 0px 20px 0px;
     gap: 4rem;
     font-size: 1.3rem;
     width: 100%;
     justify-content: center;
+    padding: 0 1.5rem 0 1.5rem;
 }
 
 .graph{
@@ -107,4 +107,47 @@
     width: 90%;
     margin-left: 25px;
     margin-top: 20px;
+}
+
+.faq-section{
+    padding: 2rem;
+}
+
+.faq-heading{
+    display: flex;
+    justify-content: center;
+}
+
+.contact-form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 2rem;
+    margin-top: 2rem;
+}
+
+@media only screen and (max-width: 770px) and (min-width: 430px){
+    .schedule-detail{
+        flex-direction: column;
+        gap: 1rem;
+        padding-left: 4rem;
+    }
+}
+@media only screen  and (max-width: 430px) and (min-width: 376px){
+    .schedule-detail{
+        flex-direction: column;
+        gap: 1rem;
+        padding-left: 2.4rem;
+    }
+}
+@media only screen  and (max-width: 376px){
+    .schedule-detail{
+        flex-direction: column;
+        gap: 0.5rem;
+        padding-left: 2rem;
+    }
+    .schedule-heading{
+        padding-left: 20px;
+    }
 }
