@@ -1,5 +1,4 @@
 import React,{useState} from 'react'
-import Navbar from '../Navbar/Navbar'
 import { Button } from '@mui/material'
 import '../Content/style.css'
 
@@ -28,7 +27,6 @@ export default function Appointment() {
   }
   return (
     <>
-      <Navbar />
       <div className='Appointment-container'>
         <div className="Appointment-container1">
           

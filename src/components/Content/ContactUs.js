@@ -1,5 +1,4 @@
 import React from "react";
-import Navbar from "../Navbar/Navbar";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
@@ -14,8 +13,6 @@ import TextField from '@mui/material/TextField';
 export default function ContactUs() {
   return (
     <>
-      <Navbar />
-
       <div>
         <Box
           component="form"

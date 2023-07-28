@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import { NavLink } from 'react-router-dom'
-import Navbar from '../Navbar/Navbar'
 import { Button } from '@mui/material'
 import '../Content/style.css'
 import BloodImg from '../../images/blood-img.png'
@@ -31,7 +30,6 @@ export default function BloodDonation() {
   
   return (
     <>
-      <Navbar />
       <div className='Blooddonation-container'>
         <div className="Blooddonation-container1">
           <div className='Blooddonation-img'>

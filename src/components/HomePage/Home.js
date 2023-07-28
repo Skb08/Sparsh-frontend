@@ -1,5 +1,4 @@
 import React from 'react'
-import Navbar from '../Navbar/Navbar'
 import '../HomePage/Home.css'
 import graph3 from '../../images/graph-3.jpg'
 import Faqs from '../Content/FaqData'
@@ -9,11 +8,13 @@ import AccordionDetails from '@mui/material/AccordionDetails';
 import Typography from '@mui/material/Typography';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import { Link } from 'react-router-dom'
+import { useAuth0 } from "@auth0/auth0-react";
 
 export default function Home() {
+  const {isAuthenticated } = useAuth0();
+
   return (
     <>
-      <Navbar />
       <div className='Home-container'>
         <div className='Home-container-1'>
           <div className="graph-3">
@@ -53,7 +54,7 @@ export default function Home() {
               </div>
             </div>
           </div>
-          <div className="schedule-dash ">
+          {isAuthenticated && <div className="schedule-dash ">
             <h4 className='schedule-heading'>Your Appointment Schedule</h4>
             <ul className="schedule-detail">
               <li>Name : <span> name</span></li>
@@ -62,8 +63,8 @@ export default function Home() {
               <li>Date : <span>date</span></li>
               <li>Time : <span>time</span></li>
             </ul>
-          </div>
-          <div className="schedule-dash ">
+          </div>}
+          {isAuthenticated && <div className="schedule-dash ">
             <h4 className='schedule-heading'>Your Blood Donation Schedule</h4>
             <ul className="schedule-detail">
               <li>Name : <span> name</span></li>
@@ -72,7 +73,7 @@ export default function Home() {
               <li>Date : <span>date</span></li>
               <li>Time : <span>time</span></li>
             </ul>
-          </div>
+          </div>}
 
           <div className='faq-section'>
             <div className='faq-heading'>

@@ -1,12 +1,15 @@
 import React from 'react'
-import {NavLink } from 'react-router-dom'
+// import {NavLink } from 'react-router-dom'
 import '../LandingPage/LandingPage.css';
-import Navbar from '../Navbar/Navbar2'
+import { useAuth0 } from "@auth0/auth0-react";
 
 export default function LandingPage() {
+  const { loginWithRedirect } = useAuth0();
+  const { isAuthenticated } = useAuth0();
+  console.log(isAuthenticated);
+
   return (
     <>
-      <Navbar />
       <section id="hero" className="d-flex align-items-center">
 
         <div className="container">
@@ -15,7 +18,11 @@ export default function LandingPage() {
               <h1>Your Health is Our Top Priority</h1>
               <h2>let us guide you on your journey to wellness.</h2>
               <div className="d-flex justify-content-center justify-content-lg-start">
-                <NavLink to="/SignIn" className="btn-get-started scrollto text-decoration-none">Sign In</NavLink>
+                {!isAuthenticated && <button onClick={() => loginWithRedirect()} className="btn-get-started scrollto text-decoration-none">Log In</button>}
+                {/* {isAuthenticated && <button onClick={() => logout({ logoutParams: { returnTo: window.location.origin } })}
+                  className="btn-get-started scrollto text-decoration-none"
+                >Log Out</button>} */}
+                {/* <NavLink to="/SignIn" className="btn-get-started scrollto text-decoration-none">Sign In</NavLink> */}
               </div>
             </div>
             <div className="col-lg-6 order-1 order-lg-2 hero-img aos-init aos-animate" data-aos="zoom-in" data-aos-delay="200">

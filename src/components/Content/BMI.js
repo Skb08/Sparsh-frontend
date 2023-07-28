@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import "../Content/style.css";
-import Navbar from "../Navbar/Navbar";
 import { Button } from "@mui/material";
 
 export default function BMI() {
@@ -45,7 +44,6 @@ export default function BMI() {
 
   return (
     <>
-      <Navbar />
       <div className="BMI-container">
         <form className="BMI-panel">
           <div className="BMI-inputBox">
