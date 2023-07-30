@@ -4,9 +4,8 @@ import '../LandingPage/LandingPage.css';
 import { useAuth0 } from "@auth0/auth0-react";
 
 export default function LandingPage() {
-  const { loginWithRedirect } = useAuth0();
-  const { isAuthenticated } = useAuth0();
-  console.log(isAuthenticated);
+  const { loginWithRedirect,isAuthenticated,user } = useAuth0();
+  console.log(user);
 
   return (
     <>
@@ -19,10 +18,6 @@ export default function LandingPage() {
               <h2>let us guide you on your journey to wellness.</h2>
               <div className="d-flex justify-content-center justify-content-lg-start">
                 {!isAuthenticated && <button onClick={() => loginWithRedirect()} className="btn-get-started scrollto text-decoration-none">Log In</button>}
-                {/* {isAuthenticated && <button onClick={() => logout({ logoutParams: { returnTo: window.location.origin } })}
-                  className="btn-get-started scrollto text-decoration-none"
-                >Log Out</button>} */}
-                {/* <NavLink to="/SignIn" className="btn-get-started scrollto text-decoration-none">Sign In</NavLink> */}
               </div>
             </div>
             <div className="col-lg-6 order-1 order-lg-2 hero-img aos-init aos-animate" data-aos="zoom-in" data-aos-delay="200">

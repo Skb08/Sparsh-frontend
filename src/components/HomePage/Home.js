@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import '../HomePage/Home.css'
 import graph3 from '../../images/graph-3.jpg'
 import Faqs from '../Content/FaqData'
@@ -9,10 +9,26 @@ import Typography from '@mui/material/Typography';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import { Link } from 'react-router-dom'
 import { useAuth0 } from "@auth0/auth0-react";
-
+const url = process.env.URL || 'https://sparsh01.onrender.com';
 export default function Home() {
-  const {isAuthenticated } = useAuth0();
+  const {isAuthenticated, user} = useAuth0();
+  const [data,setData] = useState();
+  const [donation,setDonation] = useState();
+  const [time,setTime] = useState();
+  useEffect(()=>{
+    fetch(`${url}/appointment`) 
+    .then(data => data.json())
+    .then(res => setData(res))
+    .catch(err => console.error(err))
+    fetch(`${url}/donation`) 
+    .then(data => data.json())
+    .then(res => setDonation(res))
+    .catch(err => console.error(err))
 
+      setTime(new Date());
+  },[])
+  // if(data) data.filter((qw) => user.Email !== qw.email).map((qw) => console.log(qw.email));
+     if(time) console.log(time);     
   return (
     <>
       <div className='Home-container'>
@@ -54,24 +70,30 @@ export default function Home() {
               </div>
             </div>
           </div>
-          {isAuthenticated && <div className="schedule-dash ">
+          {isAuthenticated && data && <div className="schedule-dash ">
             <h4 className='schedule-heading'>Your Appointment Schedule</h4>
             <ul className="schedule-detail">
-              <li>Name : <span> name</span></li>
-              <li>Email : <span>email</span></li>
-              <li>Phone : <span>phone</span></li>
-              <li>Date : <span>date</span></li>
-              <li>Time : <span>time</span></li>
+              {data.filter((qw) => qw.email === user.email).map((ok) => (
+                <div className="appointment-content">
+                  <li>Name : <span>{ok.name}</span></li>
+                  <li>Email : <span>{ok.email}</span></li>
+                  <li>Phone : <span>{ok.phone}</span></li>
+                  <li>Date : <span>{ok.date}</span></li>
+                </div>
+              ))} 
             </ul>
           </div>}
-          {isAuthenticated && <div className="schedule-dash ">
+          {isAuthenticated && donation && <div className="schedule-dash ">
             <h4 className='schedule-heading'>Your Blood Donation Schedule</h4>
             <ul className="schedule-detail">
-              <li>Name : <span> name</span></li>
-              <li>Email : <span>email</span></li>
-              <li>Phone : <span>phone</span></li>
-              <li>Date : <span>date</span></li>
-              <li>Time : <span>time</span></li>
+            {donation.filter((qw) => qw.name === user.name).map((ok) => (
+                <div className="appointment-content">
+                  <li>Name : <span>{ok.name}</span></li>
+                  <li>Email : <span>{ok.email}</span></li>
+                  <li>Phone : <span>{ok.phone}</span></li>
+                  <li>Date : <span>{new Date().toLocaleDateString()}</span></li>
+                </div>
+              ))}
             </ul>
           </div>}
 

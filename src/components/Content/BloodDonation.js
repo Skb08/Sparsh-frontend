@@ -1,11 +1,14 @@
 import React, { useState } from 'react'
-import { NavLink } from 'react-router-dom'
+import { NavLink, useNavigate } from 'react-router-dom'
 import { Button } from '@mui/material'
 import '../Content/style.css'
 import BloodImg from '../../images/blood-img.png'
-
+import { useAuth0 } from '@auth0/auth0-react'
+const url = process.env.URL || 'https://sparsh01.onrender.com';
 export default function BloodDonation() {
-  const [name, setName] = useState("");
+  const navigate = useNavigate();
+  const {user} = useAuth0();
+  const [name, setName] = useState(user.name);
   const [phone, setPhone] = useState("");
   const [blood, setBloodgroup] = useState("");
   const [bmi, setBMI] = useState("");
@@ -16,16 +19,18 @@ export default function BloodDonation() {
     e.preventDefault();
     const newEntry = { name:name,phone: phone,blood : blood, bmi : bmi, pin: pin };
     console.log(newEntry);
-    fetch('http://localhost:8000/donation', {
-    headers: {
-        'Accept': 'application/json',
-        'Content-Type': 'application/json'
-    },
-    method: 'POST',
-    body: JSON.stringify(newEntry)
-  })
+    fetch(`${url}/donation`, { 
+      headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json'
+      },
+      method: 'POST',
+      body: JSON.stringify(newEntry)
+    })
     .then(res => res.json()) 
     .then(data => console.log(data));
+    navigate('/Home');
+
   }
   
   return (
@@ -38,7 +43,7 @@ export default function BloodDonation() {
               <NavLink className='Blooddonation-NavLink' to="/BMI">Calculate your BMI</NavLink>
             </div>
           </div>
-          <form className="Blooddonation-form-2" action="/Appointment" method="POST" onSubmit={submitForm}>
+          <form className="Blooddonation-form-2">
             <h1 className="heading"> <span>Blood</span> Donation </h1>
             <div className="inputBox">
               <input type="text" placeholder="Full name" name="name" required autoComplete='off'
@@ -64,7 +69,7 @@ export default function BloodDonation() {
                 value={address} onChange={(e) => setAddress(e.target.value)} />
             </div>
             <br />
-            <Button type='submit' id="submit-app" variant="contained">Submit</Button>
+            <Button type='submit' id="submit-app" variant="contained" onClick={submitForm}>Submit</Button>
           </form>
 
         </div>
