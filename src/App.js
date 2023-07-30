@@ -5,8 +5,8 @@ function App() {
   return (
       <BrowserRouter>
         <Auth0Provider
-          domain={process.env.DOMAIN}
-          clientId={process.env.CLIENTID}
+          domain='naveen425kal.us.auth0.com'
+          clientId='4DW3qUo20v1veoeyNIiQ961IDsHU4Bkr'
           authorizationParams={{
             redirect_uri: window.location.origin
           }}
