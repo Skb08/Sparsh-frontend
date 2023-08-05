@@ -26,17 +26,17 @@ export default function Navbar() {
       <NavLink className='Navbar-Nav2 navbar-brand' to='/'><h1>Sparsh</h1></NavLink>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
-
       </button>
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div className='navbar-nav'>
           {
             navItems.filter((item) => isAuthenticated ? true : !item.protected ).map((item) => {
               return (
-                <NavLink className='Navbar-Nav2 nav-item nav-link' id={item.title} to={item.path}>{item.title}</NavLink>
+                <NavLink className='Navbar-Nav2 nav-item nav-link menu' id={item.title} to={item.path}>{item.title}</NavLink>
               )
             })
           }
+          
           <img onClick={authClick} 
             className="img-circle" src={user? user.picture : profile} alt={user?.name} 
           />

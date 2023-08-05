@@ -13,7 +13,21 @@ import Navbar from './Navbar';
 function Router() {
   const { isAuthenticated, isLoading } = useAuth0();
 
-  return isLoading ? <div>Loading...</div> : (
+  return isLoading ? 
+  <div style={{display:"flex",justifyContent:"center",alignItems:"center",height:"100vh"}}>
+    <h1>
+      <span style={{color:"blue"}}>L</span>
+      <span style={{color:"red"}}>O</span>
+      <span style={{color:"green"}}>A</span>
+      <span style={{color:"blue"}}>D</span>
+      <span style={{color:"green"}}>I</span>
+      <span style={{color:"green"}}>N</span>
+      <span style={{color:"blue"}}>G</span>
+      <span style={{color:"red"}}>.</span>
+      <span style={{color:"blue"}}>.</span>
+      <span style={{color:"green"}}>.</span>
+    </h1>  
+  </div> : (
     <> 
         <Navbar/>
         <Routes>
